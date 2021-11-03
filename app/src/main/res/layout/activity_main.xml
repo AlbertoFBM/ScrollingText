@@ -11,44 +11,65 @@
         android:id="@+id/heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/heading_text"
-        android:gravity="center"
         android:background="@color/purple_500"
-        android:textColor="@color/white"
-        android:textStyle="bold"
+        android:gravity="center"
+        android:text="@string/heading_text"
         android:textAppearance="@android:style/TextAppearance.Large"
-        />
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/subheading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/subheading_text"
         android:layout_below="@id/heading"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:layout_marginTop="5dp"
+        android:text="@string/subheading_text"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
     <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/article"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:text="@string/article_text" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subheading"
+        android:layout_marginTop="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/article_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/article_text" />
 
             <Button
+                android:id="@+id/addComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/button_comment"/>
+
+            <EditText
+                android:id="@+id/editComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:inputType="text"/>
+
+            <TextView
+                android:id="@+id/comment"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Hola" />
+                android:textStyle="bold"
+                android:gravity="center"/>
 
         </LinearLayout>
+
     </ScrollView>
 
 </RelativeLayout>
